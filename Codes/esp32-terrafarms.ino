@@ -1,17 +1,32 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
+#include "time.h"
 
 const char* ssid = "E-16_BWH";
 const char* password = "syaugialkaf";
-const char* serverName = "https://www.terrafarms-api.my.id/data"; // Replace with your Node-RED server IP and path
+const char* serverName = "https://node-red.terrafarms-api.my.id/data"; // Replace with your Node-RED server IP and path
 
-const int SOIL_MOISTURE_PIN = 35;
+const char* ntpServer = "pool.ntp.org";
+
+const int SOIL_MOISTURE_PIN = 32;
 const int TDS_PIN = 34;
-const int pH_PIN = 32;
+const int pH_PIN = 33;
 
-const char* userId = "55wNU9wR7iSZfn12aYEGos1CB8I2";
+const char* userId = "nLCClclYKfPgsvjzy2GsXVnIjKn2";
 const int deviceId = 1;
+unsigned long epochTime;
+
+unsigned long getTime() {
+  time_t now;
+  struct tm timeinfo;
+  if (!getLocalTime(&timeinfo)) {
+    //Serial.println("Failed to obtain time");
+    return(0);
+  }
+  time(&now);
+  return now;
+}
 
 void setup() {
   Serial.begin(115200);
@@ -29,6 +44,8 @@ void setup() {
   pinMode(TDS_PIN, INPUT);
   pinMode(pH_PIN, INPUT);
 
+  configTime(0, 0, ntpServer);
+
   int soilMoistureValue = analogRead(SOIL_MOISTURE_PIN);
   float pHValue = analogRead(pH_PIN);
   int rawTDSValue = analogRead(TDS_PIN);
@@ -43,7 +60,7 @@ void setup() {
 
   // calculate pH value
   float voltagePH = pHValue*(3.3/4095.0);
-  float pH=(0.1138*voltagePH) - 0.4183;
+  float pH=(-0.2142*voltagePH) + 3.284;
 
   // Print the soil moisture and TDS values to the serial monitor
   Serial.print("Soil Moisture: ");
@@ -56,15 +73,22 @@ void setup() {
   Serial.print("pH value: ");
   Serial.println(pH);
 
+  epochTime = getTime();
+  Serial.print("Epoch Time: ");
+  Serial.println(epochTime);
+
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
     http.begin(serverName);
+
+    time_t timestamp = time(nullptr);
 
     // Set the content type header
     http.addHeader("Content-Type", "application/json");
 
     // Create a JSON object and populate it with data
     StaticJsonDocument<200> jsonDocument;
+    jsonDocument["updatedAt"] = epochTime;
     jsonDocument["user_id"] = String(userId);
     jsonDocument["device_id"] = String(deviceId);
     jsonDocument["moisture"] = String(moisturePercentage);
