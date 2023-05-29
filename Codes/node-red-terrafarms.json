@@ -1,0 +1,65 @@
+[
+    {
+        "id": "2fa35078f35a6e6e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c1268db5a675c3dd",
+        "type": "Firestore out",
+        "z": "2fa35078f35a6e6e",
+        "name": "",
+        "collection": "users",
+        "document": "nLCClclYKfPgsvjzy2GsXVnIjKn2/devices/1",
+        "operation": "update",
+        "admin": "a3c9207063d7d0bd",
+        "eject": false,
+        "x": 530,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "07ce7807e423c68b",
+        "type": "http in",
+        "z": "2fa35078f35a6e6e",
+        "name": "",
+        "url": "/data",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "0fe693fba0dda7b4",
+                "c1268db5a675c3dd"
+            ]
+        ]
+    },
+    {
+        "id": "0fe693fba0dda7b4",
+        "type": "debug",
+        "z": "2fa35078f35a6e6e",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a3c9207063d7d0bd",
+        "type": "firebase admin",
+        "name": ""
+    }
+]
