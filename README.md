@@ -49,13 +49,7 @@ Contributions to this project are welcome. If you have any ideas, suggestions, o
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code as per the license terms.
 
-## Acknowledgements
-
-We would like to thank the following individuals and resources for their contributions to this project:
-
-- [Bangkit-IoT Team](https://github.com/bangkit-iot)
-- 
 ## Contact
 
-For any inquiries or feedback, please contact the project team at [email protected]
+For any inquiries or feedback, please contact the project team at contact@terrafarms.id
 
