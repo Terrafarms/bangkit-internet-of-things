@@ -28,8 +28,9 @@ To replicate or contribute to this project, follow the steps below:
 
 ## Folder Structure
 
-├── /bangkit-internet-of-things/Codes/ # Arduino code for ESP32
-├── /hardware_schematics/ # Hardware schematics and wiring diagrams
+├── /arduino_code/             # Arduino code for ESP32
+├── /documentation/            # Additional project documentation
+├── /hardware_schematics/      # Hardware schematics and wiring diagrams
 └── README.md # Project readme file
 
 
