@@ -1,5 +1,7 @@
 ## Schematic
 
+![image](https://github.com/Terrafarms/bangkit-internet-of-things/assets/125639879/3f138e37-fb9b-4c48-8c00-a927e28770aa)
+
 This schematic represents the connections required for the ESP32-based IoT device described in the code.
 
 ### Components
