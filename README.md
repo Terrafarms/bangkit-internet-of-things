@@ -1,16 +1,18 @@
-# bangkit-IoT
+**Bangkit-IoT**
 
-Pada tahap awal kami menerapkan IoT monitoring hanya menggunakan 3 buah sensor yaitu:
-- Sensor keasaman (pH tanah)
-- Sensor kelembapan tanah
-- Sensor TDS (Total Dissolved Solid)
+In the initial stage, we implemented IoT monitoring using only 3 sensors:
 
-Data sensor yang didapatkan dikirim secara daring langsung ke domain yang ada di GCP (Google Cloud Platform) yang kami punya. Data akan disimpan dalam bentuk JSON di Firebase, data yang dikirim berisikan informasi state sensor yang ditanam beserta timestamp di tiap pengirimannya. IoT kami dapat mengirimkan data sesuai dengan selang waktu yang ditentukan (10 detik, 30 detik, 1 menit, 1 jam, 1 hari, dst).
+- Soil acidity (pH) sensor
+- Soil moisture sensor
+- Total Dissolved Solid (TDS) sensor
 
-Untuk pengembangan lebih lanjut kami akan menetapkan 2 sensor utama dan fitur penyiraman mobile, perangkat yang digunakan adalah:
-- Sensor keasaman (pH tanah)
-- Sensor NPK (Nitrogen, Fosfor, Kalium) pada tanah
-- Pompa Air
-- Pipa dan Sprinkler
+The sensor data obtained is transmitted online directly to the domain we have in Google Cloud Platform (GCP). The data is stored in JSON format in Firebase, and each transmission includes information about the state of the planted sensors along with a timestamp. Our IoT system can send data according to a specified time interval (10 seconds, 30 seconds, 1 minute, 1 hour, 1 day, etc.).
 
-Masih banyak potensi IoT yang bisa dikembangkan seperti pemupukan otomatis, pengusir hama mobile/otomatis, hingga implementasi IoT yang diintegrasikan dengan computer vision seperti deteksi kebakaran dini pada lahan pertanian yang rawan kebakaran.
+For further development, we will incorporate 2 main sensors and a mobile irrigation feature. The devices used are:
+
+- Soil acidity (pH) sensor
+- NPK (Nitrogen, Phosphorus, Potassium) sensor for soil
+- Water pump
+- Pipes and sprinklers
+
+There is still plenty of potential for IoT development, such as automatic fertilization, mobile/automatic pest repellent, and IoT implementation integrated with computer vision, such as early fire detection in fire-prone agricultural land.
