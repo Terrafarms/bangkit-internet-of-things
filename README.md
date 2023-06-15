@@ -1,3 +1,6 @@
+
+![IoT](https://github.com/Terrafarms/bangkit-internet-of-things/assets/54931717/2d2961e6-85e8-4d7d-b3a6-a35a2d36733e)
+
 # Bangkit-IoT
 
 This project aims to develop an Internet of Things (IoT) solution for agriculture monitoring and automation. The system utilizes the ESP32 microcontroller board along with various sensors and actuators to provide real-time data about soil conditions and enable efficient irrigation.
