@@ -1,4 +1,4 @@
-**Bangkit-IoT**
+# Bangkit-IoT
 
 In the initial stage, we implemented IoT monitoring using only 3 sensors:
 
