@@ -7,6 +7,8 @@ This schematic represents the connections required for the ESP32-based IoT devic
 ### Components
 
 - ESP32 Development Board
+- Power Bucket 12V to 5V
+- Power Input
 - Soil Moisture Sensor
 - TDS Sensor
 - pH Sensor
